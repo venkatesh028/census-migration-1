@@ -1,10 +1,10 @@
 package com.ideas2it.censusmigration.service.impl;
 
-import com.ideas2it.EhrFileOperations.model.SourceExcelRecord;
-import com.ideas2it.EhrFileOperations.repository.PatientRepository;
-import com.ideas2it.EhrFileOperations.service.SourceFileService;
-import com.ideas2it.EhrFileOperations.util.customException.InvalidFileFormatException;
-import com.ideas2it.EhrFileOperations.util.helper.FileReadHelper;
+import com.ideas2it.censusmigration.model.SourceExcelRecord;
+import com.ideas2it.censusmigration.repository.SourceEhrRepository;
+import com.ideas2it.censusmigration.service.SourceFileService;
+import com.ideas2it.censusmigration.util.customException.InvalidFileFormatException;
+import com.ideas2it.censusmigration.util.helper.FileReadHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
@@ -14,11 +14,11 @@ import java.util.List;
 
 @Service
 public class SourceFileServiceImpl implements SourceFileService {
-    private final PatientRepository patientRepository;
+    private final SourceEhrRepository sourceEhrRepository;
     private static final Logger logger = LogManager.getLogger(SourceFileServiceImpl.class);
 
-    public SourceFileServiceImpl(PatientRepository patientRepository) {
-        this.patientRepository = patientRepository;
+    public SourceFileServiceImpl(SourceEhrRepository sourceEhrRepository) {
+        this.sourceEhrRepository = sourceEhrRepository;
     }
 
     @Override
@@ -30,7 +30,7 @@ public class SourceFileServiceImpl implements SourceFileService {
             if (patientRecords.isEmpty()) {
                 return false;
             } else {
-                patientRepository.saveAll(patientRecords);
+                sourceEhrRepository.saveAll(patientRecords);
                 return true;
             }
         } else {

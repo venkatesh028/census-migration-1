@@ -1,12 +1,12 @@
 package com.ideas2it.censusmigration.model;
 
 import com.ideas2it.censusmigration.util.helper.HashMapConverter;
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.ColumnTransformer;
 
+import javax.persistence.*;
 import java.util.Map;
 
 @Entity

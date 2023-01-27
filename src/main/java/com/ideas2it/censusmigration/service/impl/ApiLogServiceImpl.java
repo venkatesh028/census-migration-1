@@ -1,8 +1,8 @@
 package com.ideas2it.censusmigration.service.impl;
 
-import com.ideas2it.EhrFileOperations.model.ApiLog;
-import com.ideas2it.EhrFileOperations.repository.ApiLogRepository;
-import com.ideas2it.EhrFileOperations.service.ApiLogService;
+import com.ideas2it.censusmigration.model.ApiLog;
+import com.ideas2it.censusmigration.repository.ApiLogRepository;
+import com.ideas2it.censusmigration.service.ApiLogService;
 import org.springframework.stereotype.Service;
 
 @Service

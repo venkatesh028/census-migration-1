@@ -1,6 +1,6 @@
 package com.ideas2it.censusmigration.util.helper;
 
-import com.ideas2it.EhrFileOperations.model.SourceExcelRecord;
+import com.ideas2it.censusmigration.model.SourceExcelRecord;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;

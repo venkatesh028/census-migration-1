@@ -1,8 +1,7 @@
 package com.ideas2it.censusmigration.util.advice;
 
-import com.ideas2it.EhrFileOperations.model.ApiLog;
-import com.ideas2it.EhrFileOperations.service.ApiLogService;
-import jakarta.servlet.http.HttpServletRequest;
+import com.ideas2it.censusmigration.model.ApiLog;
+import com.ideas2it.censusmigration.service.ApiLogService;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -12,6 +11,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,8 +24,7 @@ public class ApiLogAdvice {
     public ApiLogAdvice(ApiLogService apiLogService) {
         this.apiLogService = apiLogService;
     }
-//  @Around("execution(* com.ideas2it.EhrFileOperations.controller.*.*(..))")
-    @Around("execution(* com.ideas2it.EhrFileOperations.controller.*.*(..))")
+    @Around("execution(* com.ideas2it.censusmigration.controller.*.*(..))")
     public Object logApiCalls(ProceedingJoinPoint joinPoint) throws Throwable {
         HttpServletRequest servletRequest = ((ServletRequestAttributes)
                 RequestContextHolder.getRequestAttributes()).getRequest();

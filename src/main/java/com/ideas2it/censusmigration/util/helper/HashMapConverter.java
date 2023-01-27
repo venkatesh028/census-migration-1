@@ -3,10 +3,10 @@ package com.ideas2it.censusmigration.util.helper;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.persistence.AttributeConverter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import javax.persistence.AttributeConverter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
